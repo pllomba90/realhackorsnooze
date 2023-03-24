@@ -82,6 +82,7 @@ class StoryList {
 
     const story = new Story(response.data.story);
     this.stories.unshift(story);
+    // Look into different data structure. Linked lists. chrome react dev tool for loading times 
     user.ownStories.unshift(story);
 
     return story;
@@ -244,3 +245,4 @@ isFavorite(story) {
   return this.favorites.some(s => (s.storyId === story.storyId));
   }
 }
+// use different data structures for speed. instead of looping through all stories to check for favorites add ids to a set/object
